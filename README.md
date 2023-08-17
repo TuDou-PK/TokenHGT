@@ -20,5 +20,22 @@ Existing Problems:
 - [**Tokenized Graph Transformer(TokenGT)**](https://github.com/jw9730/tokengt) has successfully addressed these issues in the graph area. But not address these issues in the hypergraph area.
 
 Thesis contributions:
-- This thesis aims to expand TokenGT to the hypergraph area to solve the limitations of message-passing and graph-specific structural modifications in the hypergraph field.
+- This thesis aims to **expand TokenGT to the hypergraph area** to solve the limitations of message-passing and graph-specific structural modifications in the hypergraph field.
 - Provide an optional method for processing hypergraphs.
+
+# TokenHGT: Based on TokenGT
+This work is based on tokenGT, our model called Tokenized HyperGraph Transformer(TokenHGT), but because hypergraphs are different from graphs, there are still innovations in our pipeline. 
+
+The following is a comparison between tokenGT and tokenHGT pipelines. The tokenGT pipeline as follows:
+
+![image](https://github.com/TuDou-PK/TokenHGT/assets/24941293/68b94594-067d-423a-b639-9ef735ec5324)
+
+Our model TokenHGT pipeline as follows:
+
+![image](https://github.com/TuDou-PK/TokenHGT/assets/24941293/90a2f2ad-467c-407b-bf28-f52d6c840ee9)
+
+The differences such as: 
+- The laplacian eigendecomposition formula is different.
+- Each graph edge only contains 2 nodes, each hyperedge contains a different number of nodes, so we can't do eigenvector alignment by the number of connected nodes as graph edges do, so I directly add eigrnvectors for feature fusion.
+- I concat feature tokens with eigenvector tokens instead of summing them, according to experiment result....
+- I didn't use "Type Identifier", it will reduce the performance of the model(In my personal opinion, it's not human-made features, it's noise).
