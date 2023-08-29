@@ -51,7 +51,7 @@ The tokenHGT algorithm is designed to operate at the graph level, making it suit
 However, it is challenging to find readily available datasets that meet these requirements. Therefore, we have explored two methods to create suitable hypergraph datasets.
 
 I find two choices:
-- Cvonvert a graph into hypergraph, using Dual Hypergraph Transformation (DHT) from [Edge Representation Learning with Hypergraphs](Edge Representation Learning with Hypergraphs).
+- Cvonvert a graph into hypergraph, using Dual Hypergraph Transformation (DHT) from [Edge Representation Learning with Hypergraphs](https://github.com/harryjo97/EHGNN).
 - Convert a text into hypergraph from [Hypergraph Attention Networks for Inductive Text Classification](https://github.com/kaize0409/HyperGAT_TextClassification)
 
 I tried DHT method in PCQM4Mv2 and ogbg-molhiv, that's interesting to convert a molecular graph to a hypergraph, but due to device limitation(Money is all you need :), I have to give up it.
